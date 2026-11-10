@@ -1,6 +1,6 @@
 import type { Aluno } from '../types/aluno'
 
-const URL_ALUNOS = '/dados/alunos.json'
+const URL_ALUNOS = 'dados/alunos.json'
 
 export async function buscarAlunos(): Promise<Aluno[]> {
   const resposta = await fetch(URL_ALUNOS)
