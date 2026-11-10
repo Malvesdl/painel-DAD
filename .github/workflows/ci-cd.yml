@@ -36,17 +36,17 @@ jobs:
         if: github.event_name == 'push'
         with:
           path: dist
-        
-        cd:
-  needs: ci
-  if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-  runs-on: ubuntu-latest
-  environment:
-    name: github-pages
-    url: ${{ steps.deployment.outputs.page_url }}
-  steps:
-    - name: Configure GitHub Pages
-      uses: actions/configure-pages@v5
 
-    - id: deployment
-      uses: actions/deploy-pages@v4
+  cd:
+    needs: ci
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
