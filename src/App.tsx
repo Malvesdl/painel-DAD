@@ -125,4 +125,4 @@ function App() {
 }
 
 export default App
-const x: number = 'erro'
+
